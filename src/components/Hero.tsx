@@ -93,34 +93,16 @@ export const Hero = () => {
            initial={{ opacity: 0, y: 40 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-           className="mt-20 w-full max-w-5xl relative"
+           className="mt-20 md:mt-32 w-full max-w-5xl flex justify-center relative mb-10"
         >
-          {/* Mockup do Laptop */}
+          {/* Floating Globe */}
           <motion.div 
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-full aspect-[16/10] bg-zinc-900 rounded-t-2xl lg:rounded-t-[32px] border-t-8 border-l-8 border-r-8 border-zinc-800 shadow-2xl overflow-hidden"
+            className="relative w-full max-w-[320px] md:max-w-[500px] pointer-events-auto z-10"
           >
-            {/* Imagem/Mockup Placeholder Brilhante */}
-            <div className="w-full h-8 bg-zinc-800 flex items-center px-4 gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-            </div>
-            <div className="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-900 to-black relative">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-              
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-full max-w-[280px] md:max-w-md pointer-events-auto z-10">
-                 <GlobePulse />
-              </div>
-            </div>
+            <GlobePulse />
           </motion.div>
-          {/* Base do Laptop */}
-          <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[110%] -ml-[5%] h-6 bg-zinc-700 border-t border-zinc-600 rounded-b-xl shadow-[0_30px_50px_-10px_rgba(0,0,0,0.8)]" 
-          />
         </motion.div>
 
       </div>
