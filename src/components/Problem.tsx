@@ -56,7 +56,7 @@ export const Problem = () => {
            transition={{ duration: 0.8, delay: 0.4, ease: "backOut" }}
            className="relative mx-auto w-full max-w-lg z-10"
         >
-          <div className="absolute inset-0 bg-red-500/20 blur-[80px] rounded-full z-0" />
+          <div className="absolute inset-0 bg-red-500/20 blur-[80px] rounded-full z-0 hidden md:block" />
           
           <div className="relative z-10 bg-zinc-900 border border-red-500/30 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 transform transition-transform hover:scale-105 hover:rotate-0 hover:border-red-500/50 duration-500">
             {/* Stamp "ANTES" */}

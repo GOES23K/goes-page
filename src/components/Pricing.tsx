@@ -18,7 +18,7 @@ export const Pricing = () => {
   return (
     <section className="w-full py-24 md:py-32 px-4 bg-black relative" id="preco">
       {/* Background radial soft light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none hidden md:block" />
 
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         <motion.h2 

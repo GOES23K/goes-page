@@ -80,10 +80,10 @@ export function GlobePulse({
       if (width === 0 || globe) return
 
       globe = createGlobe(canvas, {
-      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      devicePixelRatio: window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio || 1, 2),
       width, height: width,
       phi: 0, theta: 0.2, dark: 1, diffuse: 1.5,
-      mapSamples: 16000, mapBrightness: 10,
+      mapSamples: window.innerWidth < 768 ? 8000 : 16000, mapBrightness: 10,
       baseColor: [0.5, 0.5, 0.5],
       markerColor: [0.2, 0.8, 0.9],
       glowColor: [0.05, 0.05, 0.05],

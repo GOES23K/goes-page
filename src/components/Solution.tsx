@@ -45,7 +45,7 @@ const features = [
 export const Solution = () => {
   return (
     <section className="w-full py-24 px-4 bg-black relative" id="servicos">
-      <div className="absolute inset-0 bg-blue-900/5 blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-blue-900/5 blur-[120px] pointer-events-none hidden md:block" />
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         <motion.h2 

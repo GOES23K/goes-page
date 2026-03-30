@@ -38,8 +38,8 @@ export const Hero = () => {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-4 overflow-hidden">
       {/* Aurora Background Effect */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute -inset-[10px] opacity-30 mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)]">
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(100deg,var(--color-brand-blue)_10%,var(--color-brand-cyan)_30%,var(--color-brand-purple)_50%,var(--color-brand-blue)_70%)] [background-size:200%_100%] animate-aurora mix-blend-screen filter blur-[60px]" />
+        <div className="absolute -inset-[10px] opacity-30 md:opacity-30 opacity-20 mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)] hidden sm:block">
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(100deg,var(--color-brand-blue)_10%,var(--color-brand-cyan)_30%,var(--color-brand-purple)_50%,var(--color-brand-blue)_70%)] [background-size:200%_100%] md:animate-aurora mix-blend-screen filter blur-[40px] md:blur-[60px]" />
         </div>
       </div>
 
