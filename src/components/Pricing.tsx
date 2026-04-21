@@ -49,16 +49,13 @@ export const Pricing = () => {
              </div>
 
              <div className="text-center mb-10 border-b border-zinc-800 pb-10 w-full">
-                <span className="text-zinc-500 font-medium text-lg block mb-2">Por apenas</span>
+                <span className="text-zinc-500 font-medium text-lg block mb-2">A partir de</span>
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-3xl text-zinc-400 font-bold">R$</span>
                   <span className="text-6xl md:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                     350
                   </span>
                 </div>
-                <p className="text-zinc-400 mt-4 text-sm font-medium">
-                  Pagamento único. Sem mensalidade.
-                </p>
              </div>
 
              <div className="flex flex-col gap-4 w-full mb-10">
