@@ -44,8 +44,8 @@ export const Testimonials = () => {
         </motion.h2>
       </div>
 
-      <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] w-full">
-        <div className="flex shrink-0 animate-marquee-slow gap-6 px-3">
+      <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] w-full">
+        <div className="flex shrink-0 animate-marquee-slow gap-6 px-3 group-hover:[animation-play-state:paused] motion-reduce:animate-none">
           {testimonials.map((item, idx) => (
              <div key={idx} className="w-[350px] md:w-[450px] bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between shrink-0 hover:border-blue-500/30 transition-colors cursor-grab">
                 
@@ -74,7 +74,7 @@ export const Testimonials = () => {
         </div>
         
         {/* Clone para continuar infinito fluidamente */}
-        <div className="flex shrink-0 animate-marquee-slow gap-6 px-3" aria-hidden="true">
+        <div className="flex shrink-0 animate-marquee-slow gap-6 px-3 group-hover:[animation-play-state:paused] motion-reduce:animate-none" aria-hidden="true">
           {testimonials.map((item, idx) => (
              <div key={`clone-${idx}`} className="w-[350px] md:w-[450px] bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between shrink-0 hover:border-blue-500/30 transition-colors cursor-grab">
                 <div className="flex gap-1 mb-6 text-yellow-500">

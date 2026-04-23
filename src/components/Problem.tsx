@@ -58,14 +58,36 @@ export const Problem = () => {
         >
           <div className="absolute inset-0 bg-red-500/20 blur-[80px] rounded-full z-0 hidden md:block" />
           
-          <div className="relative z-10 bg-zinc-900 border border-red-500/30 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 transform transition-transform hover:scale-105 hover:rotate-0 hover:border-red-500/50 duration-500">
+          <div className="relative z-10 bg-zinc-900 border border-red-500/30 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 transform transition-transform motion-safe:hover:scale-105 motion-safe:hover:rotate-0 hover:border-red-500/50 duration-500">
             {/* Stamp "ANTES" */}
             <div className="absolute -top-4 -right-4 bg-red-600 text-white font-black text-xl px-6 py-2 rounded-full rotate-12 shadow-lg border-2 border-zinc-900 z-20">
               ANTES
             </div>
-            
+
             <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-zinc-800">
-               <Image src="/images/bad_design.png" alt="Exemplo de site desatualizado" fill className="object-cover" />
+              <Image
+                src="/images/bad_design.png"
+                alt="Exemplo de site desatualizado com design genérico"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover grayscale-[35%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-red-950/50 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Faux metrics bar */}
+            <div className="flex items-center justify-between gap-3 px-1 pt-2">
+              <div className="flex flex-col">
+                <span className="text-[10px] uppercase tracking-widest text-red-400/80">Conversão</span>
+                <span className="text-white font-bold text-lg">0,8%</span>
+              </div>
+              <div className="flex-1 h-2 rounded-full bg-zinc-800 overflow-hidden">
+                <div className="h-full w-[12%] bg-gradient-to-r from-red-600 to-red-400 rounded-full" />
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-[10px] uppercase tracking-widest text-red-400/80">PageSpeed</span>
+                <span className="text-white font-bold text-lg">32</span>
+              </div>
             </div>
           </div>
         </motion.div>

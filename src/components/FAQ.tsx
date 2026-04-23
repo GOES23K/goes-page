@@ -50,45 +50,63 @@ export const FAQ = () => {
         </motion.h2>
 
         <div className="flex flex-col gap-4 w-full">
-          {faqs.map((faq, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-700 transition-colors"
-            >
-              <button 
-                onClick={() => toggleOpen(idx)}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            const panelId = `faq-panel-${idx}`;
+            const buttonId = `faq-button-${idx}`;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className={`w-full bg-zinc-900 border rounded-2xl overflow-hidden transition-colors ${
+                  isOpen ? "border-blue-500/40" : "border-zinc-800 hover:border-zinc-700"
+                }`}
               >
-                <span className="font-bold text-lg md:text-xl text-zinc-100 pr-8">{faq.q}</span>
-                <motion.div 
-                  animate={{ rotate: openIndex === idx ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="shrink-0 text-blue-500"
+                <button
+                  id={buttonId}
+                  type="button"
+                  onClick={() => toggleOpen(idx)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  className="w-full flex items-center justify-between gap-4 p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset"
                 >
-                  <ChevronDown size={24} />
-                </motion.div>
-              </button>
-
-              <AnimatePresence>
-                {openIndex === idx && (
+                  <span className="font-bold text-lg md:text-xl text-zinc-100 pr-2">
+                    {faq.q}
+                  </span>
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`shrink-0 ${isOpen ? "text-blue-400" : "text-zinc-500"}`}
+                    aria-hidden="true"
                   >
-                    <div className="px-6 pb-6 text-zinc-400 text-sm md:text-base leading-relaxed">
-                      {faq.a}
-                    </div>
+                    <ChevronDown size={24} />
                   </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 text-zinc-400 text-sm md:text-base leading-relaxed">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
         
         <p className="mt-12 text-zinc-500 text-center">
